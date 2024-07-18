@@ -5,6 +5,7 @@ import { PostDetailComponent } from '../../components/post-detail/post-detail.co
 import { LoginPageComponent } from '../../components/login-page/login-page.component';
 import { RegisterPageComponent } from '../../components/register-page/register-page.component';
 
+//lines of routes
 const routes: Routes = [
   { path: '', component: ListPostsComponent },
   { path: 'posts/:id', component: PostDetailComponent },

@@ -1,4 +1,4 @@
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule,HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Post } from '../../models/post.model'; // Adjust the path as necessary
@@ -11,6 +11,7 @@ import { Post } from '../../models/post.model'; // Adjust the path as necessary
   styleUrls: ['./list-posts.component.css']
 })
 export class ListPostsComponent {
+  //variable to hold the data
   posts?: Post[] = [];
 
   constructor(private http: HttpClient) { }
@@ -19,6 +20,7 @@ export class ListPostsComponent {
     this.initData();
   }
 
+  //method called initData
   initData(): void {
     this.http.get<Post[]>('https://localhost:7140/api/Post')
       .subscribe({

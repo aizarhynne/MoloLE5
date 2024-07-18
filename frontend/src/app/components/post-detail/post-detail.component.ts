@@ -23,6 +23,7 @@ export class PostDetailComponent {
     private http: HttpClient
   ) { }
 
+    //This would take the ID based off of the URL of the page
   ngOnInit(): void {
     this.routeSub = this.route.params.subscribe(params => {
       this.id =  params['id']; 
@@ -30,7 +31,7 @@ export class PostDetailComponent {
     this.initData();
   }
 
-
+  //initData Method to get the data from the API
   initData(): void {
     this.http.get<Post>("https://localhost:7140/api/post/" + this.id).subscribe({
       next: (data: Post) => {
